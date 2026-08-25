@@ -24,7 +24,7 @@ Un **MVP funcionando en el celular**: PWA de **una casa**, usada **solo por vos*
 
 ## Decisions so far
 
-<!-- empty until a ticket is resolved -->
+- [Cómo llega la app al teléfono](issues/02-como-llega-la-app-al-telefono.md): para uso diario, host estático con HTTPS (Pages / Cloudflare Pages / Netlify) y abrir esa URL en el celular; LAN HTTP y sideload `file://` no dan PWA instalable ni origen estable para IndexedDB.
 
 ## Not yet specified
 
