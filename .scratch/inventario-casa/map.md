@@ -24,7 +24,8 @@ Un **MVP funcionando en el celular**: PWA de **una casa**, usada **solo por vos*
 
 ## Decisions so far
 
-- [Persistencia PWA en el celular](.scratch/inventario-casa/issues/01-persistencia-pwa-en-el-celular.md) — IndexedDB sin backup solo es usable en iOS como Home Screen web app (`standalone` + `persist()`); en Chrome Android el ícono no aísla datos y “limpiar Chrome” los borra.
+- [Persistencia PWA en el celular](issues/01-persistencia-pwa-en-el-celular.md) — IndexedDB sin backup solo es usable en iOS como Home Screen web app (`standalone` + `persist()`); en Chrome Android el ícono no aísla datos y “limpiar Chrome” los borra.
+- [Cómo llega la app al teléfono](issues/02-como-llega-la-app-al-telefono.md) — para uso diario, host estático con HTTPS (Pages / Cloudflare Pages / Netlify) y abrir esa URL en el celular; LAN HTTP y sideload `file://` no dan PWA instalable ni origen estable para IndexedDB.
 
 ## Not yet specified
 
