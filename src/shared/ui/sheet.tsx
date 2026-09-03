@@ -1,5 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import type { ReactNode } from 'react'
+import { useKeyboardOffset } from '@/shared/lib/keyboard-offset'
 import { cn } from '@/shared/lib/utils'
 
 function Sheet({
@@ -25,14 +26,20 @@ function SheetContent({
   children: ReactNode
   className?: string
 }) {
+  const offset = useKeyboardOffset()
+
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="fixed inset-0 z-40 bg-black/40" />
       <Dialog.Content
         className={cn(
-          'fixed inset-x-0 bottom-0 z-50 max-h-[85%] overflow-auto rounded-t-3xl border-2 border-border bg-card p-4 pb-8 shadow-lg',
+          'fixed inset-x-0 bottom-0 z-50 overflow-auto rounded-t-3xl border-2 border-border bg-card p-4 pb-8 shadow-lg',
           className,
         )}
+        style={{
+          bottom: offset,
+          maxHeight: `min(85dvh, calc(100dvh - ${offset}px))`,
+        }}
       >
         {children}
       </Dialog.Content>

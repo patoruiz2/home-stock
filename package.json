@@ -10,7 +10,8 @@
     "test:watch": "vitest",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "doctor": "npx react-doctor@latest"
+    "doctor": "npx react-doctor@latest",
+    "deploy": "pnpm build && node scripts/deploy-gh-pages.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.23",

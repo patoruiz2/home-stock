@@ -47,7 +47,7 @@ function precacheSw() {
 }
 
 export default defineConfig({
-  base: '/inventario-casa/',
+  base: '/home-stock/',
   plugins: [react(), tailwindcss(), precacheSw()],
   resolve: {
     alias: {
