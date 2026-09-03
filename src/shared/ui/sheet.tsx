@@ -37,8 +37,8 @@ function SheetContent({
           className,
         )}
         style={{
-          bottom: offset,
-          maxHeight: `min(85dvh, calc(100dvh - ${offset}px))`,
+          bottom: `max(${offset}px, env(keyboard-inset-height, 0px))`,
+          maxHeight: `min(85dvh, calc(100dvh - max(${offset}px, env(keyboard-inset-height, 0px))))`,
         }}
       >
         {children}

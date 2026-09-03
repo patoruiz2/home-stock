@@ -31,4 +31,15 @@ describe('keyboardOffset', () => {
       }),
     ).toBe(0)
   })
+
+  it('uses the keyboard inset when the visual viewport did not shrink', () => {
+    expect(
+      keyboardOffset({
+        innerHeight: 800,
+        visualHeight: 800,
+        offsetTop: 0,
+        keyboardInset: 320,
+      }),
+    ).toBe(320)
+  })
 })

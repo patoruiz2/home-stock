@@ -16,7 +16,15 @@ self.addEventListener('install', (event) => {
 })
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim())
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      const stale = []
+      for (const key of keys) {
+        if (key !== CACHE) stale.push(caches.delete(key))
+      }
+      return Promise.all(stale)
+    }).then(() => self.clients.claim()),
+  )
 })
 
 self.addEventListener('fetch', (event) => {
