@@ -1,5 +1,5 @@
-const CACHE = 'casa-shell-acf058de'
-const PRECACHE = ["./","./index.html","./manifest.webmanifest","./icon.svg","./icon-192.png","./icon-512.png","./assets/index-CFhUlM0i.css","./assets/index-CjAXdl23.js"]
+const CACHE = 'casa-shell-59168c69'
+const PRECACHE = ["./","./index.html","./manifest.webmanifest","./icon.svg","./icon-192.png","./icon-512.png","./assets/index-CFhUlM0i.css","./assets/index-DQloXof2.js"]
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -9,7 +9,15 @@ self.addEventListener('install', (event) => {
 })
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim())
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      const stale = []
+      for (const key of keys) {
+        if (key !== CACHE) stale.push(caches.delete(key))
+      }
+      return Promise.all(stale)
+    }).then(() => self.clients.claim()),
+  )
 })
 
 self.addEventListener('fetch', (event) => {
