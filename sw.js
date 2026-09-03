@@ -1,5 +1,5 @@
-const CACHE = 'casa-shell-4827e8f7'
-const PRECACHE = ["./","./index.html","./manifest.webmanifest","./icon.svg","./icon-192.png","./icon-512.png","./assets/index-B_tTX-t3.js","./assets/index-CFhUlM0i.css"]
+const CACHE = 'casa-shell-acf058de'
+const PRECACHE = ["./","./index.html","./manifest.webmanifest","./icon.svg","./icon-192.png","./icon-512.png","./assets/index-CFhUlM0i.css","./assets/index-CjAXdl23.js"]
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
