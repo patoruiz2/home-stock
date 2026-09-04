@@ -2,6 +2,9 @@
   "name": "inventario-casa",
   "private": true,
   "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.1.0",
+  "author": "Patricio Ruiz",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

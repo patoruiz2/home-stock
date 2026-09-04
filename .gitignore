@@ -27,5 +27,7 @@ test-results
 !/components.json
 !/doctor.config.json
 !/.gitignore
+!/.github/
+!/.github/**
 !/scripts/
 !/scripts/**
